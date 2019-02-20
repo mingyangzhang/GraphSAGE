@@ -39,6 +39,8 @@ class EdgeMinibatchIterator(object):
         #     edges = G.edges()
         # else:
         #     edges = context_pairs
+
+        edges = G.edges()
         self.train_edges = self.edges = np.random.permutation(edges)
         if not n2v_retrain:
             self.train_edges = self._remove_isolated(self.train_edges)
